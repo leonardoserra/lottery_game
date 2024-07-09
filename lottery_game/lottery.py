@@ -9,13 +9,15 @@ class Lottery:
     while len(Lottery.winning_numbers) < 15:
       r:int = random.randint(1, 90)
       Lottery.winning_numbers.add(r)
+    print("------------ BENVENUTI AL GIOCO DELLA LOTTERIA ------------")
     print("Numeri Vincenti:", Lottery.winning_numbers, "\n-------------------------------------")
 
 
   @staticmethod
   def start_game(players)->None:
-
     if not len(players): print("Non Ci sono Players"); exit(); 
+
+    Lottery.extract_winning_numbers()
     
     while not Lottery.winner:
       
